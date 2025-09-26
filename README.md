@@ -22,7 +22,13 @@ Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera q
 Imagen3 (Diagrama en escalera en CODESYS)
 ## OPENPLC
 ### Lógica del Sistema:
+Para validar de manera independiente la lógica de control, se replicó el diagrama de escalera en OpenPLC. Esta herramienta fue fundamental para simular el comportamiento de un PLC real. La lógica se configuró para mapear las entradas y salidas virtuales de la simulación a los pines físicos de una placa de hardware, preparando el sistema para las pruebas de campo.
 ### Implementación y Resultados:
+Para este paso, se generaron los mismos 5 Rungs que ya mencioné anteriormente pero en esta ocasión en OPENPLC, acá se tuvieron que declarar las variables con mayor detalle como se muestra en la imagen4, posteriormente, ya con las variables creadas se implemento el diagrama de escalera mencionado anteriormente como se puede ver en la imagen5 y finalmente se compilo lo realizado para así poderlo llevar a un Arduino Uno.
+<img width="576" height="274" alt="Captura de pantalla 2025-09-24 200340" src="https://github.com/user-attachments/assets/ae2dbc73-9f4b-4cec-872a-aadf3cffaad6" />
+Imagen4 (Declaración de variables en OPENPLC)
+<img width="1145" height="641" alt="image" src="https://github.com/user-attachments/assets/7c8c3721-f23a-426a-a0f2-80340161668c" />
+Imagen5 (Diagrama en escalera en OPENPLC)
 ## HARDWARE
 ### Lógica del Sistema:
 ### Implementación y Resultados:
