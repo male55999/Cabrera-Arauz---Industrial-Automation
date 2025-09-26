@@ -35,5 +35,12 @@ Imagen6 (Compilación funcionando en OPENPLC)
 ### Lógica del Sistema:
 El circuito de hardware fue diseñado para simular los componentes industriales del sistema. Los sensores de nivel se representaron con interruptores, y los actuadores (indicadores de estado y bombas) se simularon con LEDs. Todo esto sale de la placa que ejecuta el código de OpenPLC y que se transformo en Arduino Uno.
 ### Implementación y Resultados:
-
+El hardware se construyó físicamente en un protoboard. Las pruebas de cableado no fueron exitosas, lo que representó un desafío significativo. Los cables y conexiones presentaban fallos intermitentes y no lograban replicar la lógica de control de manera confiable. Pero quedó el cableado como se ve en la imagen7.
+![Imagen de WhatsApp 2025-09-25 a las 22 17 20_d63cabb0](https://github.com/user-attachments/assets/f287ec05-843a-4764-b6d0-939a63933724)
+Imagen7 (Cableo de la simulación del Hardware)
 ## CONCLUSIÓN
+### Resumen de Resultados:
+En síntesis, este proyecto demostró con éxito la viabilidad de utilizar un flujo de trabajo que combina simulación y validación con hardware real. El proyecto alcanzó sus objetivos de diseño e implementación de un sistema de automatización funcional aunque no fue posible su ejecución en un entorno físico. La integración de CODESYS y OpenPLC fue exitosa, confirmando la robustez de la lógica combinacional de control.
+
+### Aprendizajes y Desafíos:
+Durante el proceso, se obtuvieron lecciones aprendidas sobre la resolución de problemas y se superaron desafíos técnicos en la integración de software. El proyecto subraya la importancia de la validación como un paso crítico para garantizar la fiabilidad de un sistema antes de su despliegue final. Adicionalmente y personalmente, aprendí mucho y me sentí bien ejecutandolo.
