@@ -13,11 +13,11 @@ La base del control en CODESYS es un circuito de lógica combinacional diseñado
 <img width="669" height="375" alt="Captura de pantalla 2025-09-23 213045" src="https://github.com/user-attachments/assets/5893857c-9dfa-4f35-99e7-0730b88ae732" />
 imagen 1 (creación de archivo LD en CODESYS)
 ### Implementación y Resultados:
-Para su implementación, se creo paralelamente el HMI y el diagram de escalera con el fin de que se vincularan al final. Lo primer que se hizo fue crear la visualización (HMI) en POU y por medio de las diferente herraminetes de CODESYS se fue creando el HMI que se puede observar en la imagen2.
+Para su implementación, se creo paralelamente el HMI y el diagram de escalera con el fin de que se vincularan al final. Lo primer que se hizo fue crear la visualización (HMI) en POU y por medio de las diferente herraminetes de CODESYS se fue creando el HMI que se puede observar en la imagen2. Cuando inicia la simulación el nivel comienza a aumentar tanto en el manometro como en el tanque y a medida que esto pasa se van mostrando los niveles con las diferentes lamparas, en caso de que exista una fuga se enciende la alarma y se pausa aumento de nivel al igual que el funcionamiento de la bomba.
 <img width="706" height="367" alt="Captura de pantalla 2025-09-24 184922" src="https://github.com/user-attachments/assets/809e7102-03c0-43f6-978a-bf0bb63ed404" />
 Imagen2 (Diseño en CODESYS de la HMI)
 
-Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera que se puede observar en la imagen3,
+Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera que se puede observar en la imagen3, en el primer Rung podemos observar el ingreso de la señal de los dos sensores (bajo y alto) a la bomba de control que por medio de un SR (Set/Reset) prende o apaga la bomba, es decir, cuando el sensor_nivel_bajo manda la señal se activa y cuando entra la señal del sensor_nivel_alto se apaga, además, en este Rung tambien entra el sensor_fuga que lo que hace por medio de un contacto negado es pausar el funcionamiento de la bomba en caso de fuga. Para el Rung 2, tenemos el sumador de nivel, es decir que el nivel se va sumando de uno en uno. Finalmente, los Rungs 3, 4 y 5 funcionan de forma similar y estos tienen como función mas que todo generar la visualización del HMI, en el Rung 3 se ve el nivel alto es decir cuando es igual a 999, en el Rung 4 cuando es mayor a 100 pero menor de 999 y en el Rung 5 cuando es menor o igual a 100.
 <img width="1105" height="827" alt="Captura de pantalla 2025-09-24 184908" src="https://github.com/user-attachments/assets/cdbedc15-ba58-46be-9961-12d7ad927841" />
 Imagen3 (Diagrama en escalera en CODESYS)
 ## OPENPLC
