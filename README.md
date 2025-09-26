@@ -17,19 +17,23 @@ Para su implementación, se creo paralelamente el HMI y el diagram de escalera c
 <img width="706" height="367" alt="Captura de pantalla 2025-09-24 184922" src="https://github.com/user-attachments/assets/809e7102-03c0-43f6-978a-bf0bb63ed404" />
 Imagen2 (Diseño en CODESYS de la HMI)
 
-Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera que se puede observar en la imagen3, en el primer Rung podemos observar el ingreso de la señal de los dos sensores (bajo y alto) a la bomba de control que por medio de un SR (Set/Reset) prende o apaga la bomba, es decir, cuando el sensor_nivel_bajo manda la señal se activa y cuando entra la señal del sensor_nivel_alto se apaga, además, en este Rung tambien entra el sensor_fuga que lo que hace por medio de un contacto negado es pausar el funcionamiento de la bomba en caso de fuga. Para el Rung 2, tenemos el sumador de nivel, es decir que el nivel se va sumando de uno en uno. Finalmente, los Rungs 3, 4 y 5 funcionan de forma similar y estos tienen como función mas que todo generar la visualización del HMI, en el Rung 3 se ve el nivel alto es decir cuando es igual a 999, en el Rung 4 cuando es mayor a 100 pero menor de 999 y en el Rung 5 cuando es menor o igual a 100.
+Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera que se puede observar en la imagen3, en el primer Rung podemos observar el ingreso de la señal de los dos sensores (bajo y alto) a la bomba de control que por medio de un SR (Set/Reset) prende o apaga la bomba, es decir, cuando el sensor_nivel_bajo manda la señal se activa y cuando entra la señal del sensor_nivel_alto se apaga, además, en este Rung tambien entra el sensor_fuga que lo que hace por medio de un contacto negado es pausar el funcionamiento de la bomba en caso de fuga. Para el Rung 2, tenemos el sumador de nivel, es decir que el nivel se va sumando de uno en uno. Finalmente, los Rungs 3, 4 y 5 funcionan de forma similar y estos tienen como función mas que todo generar la visualización del HMI, en el Rung 3 se ve el nivel alto es decir cuando es igual a 999, en el Rung 4 cuando es mayor a 100 pero menor de 999 y en el Rung 5 cuando es menor o igual a 100. Todo esto resulto en una simulación satisfactoria donde el diagrama de escalera muestra de forma positiva su ejecución con el HMI.
 <img width="1105" height="827" alt="Captura de pantalla 2025-09-24 184908" src="https://github.com/user-attachments/assets/cdbedc15-ba58-46be-9961-12d7ad927841" />
 Imagen3 (Diagrama en escalera en CODESYS)
 ## OPENPLC
 ### Lógica del Sistema:
 Para validar de manera independiente la lógica de control, se replicó el diagrama de escalera en OpenPLC. Esta herramienta fue fundamental para simular el comportamiento de un PLC real. La lógica se configuró para mapear las entradas y salidas virtuales de la simulación a los pines físicos de una placa de hardware, preparando el sistema para las pruebas de campo.
 ### Implementación y Resultados:
-Para este paso, se generaron los mismos 5 Rungs que ya mencioné anteriormente pero en esta ocasión en OPENPLC, acá se tuvieron que declarar las variables con mayor detalle como se muestra en la imagen4, posteriormente, ya con las variables creadas se implemento el diagrama de escalera mencionado anteriormente como se puede ver en la imagen5 y finalmente se compilo lo realizado para así poderlo llevar a un Arduino Uno.
+Para este paso, se generaron los mismos 5 Rungs que ya mencioné anteriormente pero en esta ocasión en OPENPLC, acá se tuvieron que declarar las variables con mayor detalle como se muestra en la imagen4, posteriormente, ya con las variables creadas se implemento el diagrama de escalera mencionado anteriormente como se puede ver en la imagen5 y finalmente se compilo lo realizado para así poderlo llevar a un Arduino Uno como se ve en la imagen6. Como resultado, se compilo y se genero el formato Arduino Uno exitosamente.
 <img width="576" height="274" alt="Captura de pantalla 2025-09-24 200340" src="https://github.com/user-attachments/assets/ae2dbc73-9f4b-4cec-872a-aadf3cffaad6" />
 Imagen4 (Declaración de variables en OPENPLC)
 <img width="1145" height="641" alt="image" src="https://github.com/user-attachments/assets/7c8c3721-f23a-426a-a0f2-80340161668c" />
 Imagen5 (Diagrama en escalera en OPENPLC)
+<img width="1232" height="773" alt="image" src="https://github.com/user-attachments/assets/91243138-e332-48e4-9f4d-0ee9cbfb1172" />
+Imagen6 (Compilación funcionando en OPENPLC)
 ## HARDWARE
 ### Lógica del Sistema:
+El circuito de hardware fue diseñado para simular los componentes industriales del sistema. Los sensores de nivel se representaron con interruptores, y los actuadores (indicadores de estado y bombas) se simularon con LEDs. Todo esto sale de la placa que ejecuta el código de OpenPLC y que se transformo en Arduino Uno.
 ### Implementación y Resultados:
+
 ## CONCLUSIÓN
