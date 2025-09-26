@@ -11,8 +11,15 @@ La metodología de este informe sigue las fases del proyecto dadas: primero el d
 ### Lógica del Sistema:
 La base del control en CODESYS es un circuito de lógica combinacional diseñado para gestionar y visualizar los niveles del tanque, además, se implemento un sensor de fuga que detra el proceso hasta que este sea solucionado. Esta lógica se implementó mediante un diagrama de escalera (Ladder Diagram) como se puede observar en la imagen1 que define las relaciones entre los sensores de nivel (alto y bajo), los indicadores visuales de estado (bajo, cargando, alto y el medidor), el funcionamiento de la bomba y el sensor de fuga.
 <img width="669" height="375" alt="Captura de pantalla 2025-09-23 213045" src="https://github.com/user-attachments/assets/5893857c-9dfa-4f35-99e7-0730b88ae732" />
+imagen 1 (creación de archivo LD en CODESYS)
 ### Implementación y Resultados:
-Para su implementación, se creo paralelamente el HMI y el diagram de escalera con el fin de que se vincularan al final.
+Para su implementación, se creo paralelamente el HMI y el diagram de escalera con el fin de que se vincularan al final. Lo primer que se hizo fue crear la visualización (HMI) en POU y por medio de las diferente herraminetes de CODESYS se fue creando el HMI que se puede observar en la imagen2.
+<img width="706" height="367" alt="Captura de pantalla 2025-09-24 184922" src="https://github.com/user-attachments/assets/809e7102-03c0-43f6-978a-bf0bb63ed404" />
+Imagen2 (Diseño en CODESYS de la HMI)
+
+Paralelamente como se mencionó anteriormente, se creo el diagrama en escalera que se puede observar en la imagen3,
+<img width="1105" height="827" alt="Captura de pantalla 2025-09-24 184908" src="https://github.com/user-attachments/assets/cdbedc15-ba58-46be-9961-12d7ad927841" />
+Imagen3 (Diagrama en escalera en CODESYS)
 ## OPENPLC
 ### Lógica del Sistema:
 ### Implementación y Resultados:
